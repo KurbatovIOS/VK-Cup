@@ -131,6 +131,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = categoriesCollection.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCell {
             cell.configure(title: categories[indexPath.row])
+            cell.onAppereAnimation()
             return cell
         }
         else { return UICollectionViewCell() }

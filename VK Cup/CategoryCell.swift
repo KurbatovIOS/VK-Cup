@@ -14,6 +14,7 @@ class CategoryCell: UICollectionViewCell {
     
     func configure(title: String) {
         
+        self.alpha = 0
         self.backgroundColor =  .gray
         self.layer.cornerRadius = 15
         
@@ -54,6 +55,15 @@ class CategoryCell: UICollectionViewCell {
             UIView.animate(withDuration: 0.6, delay: 0) {
                 self.transform = CGAffineTransformScale(viewsOriginalTransform, 1, 1)
             }
+        }
+    }
+    
+    func onAppereAnimation() {
+        
+        let randomDelay = Double.random(in: 0.0...0.5)
+        
+        UIView.animate(withDuration: 1, delay: randomDelay) {
+            self.alpha = 1
         }
     }
 }
