@@ -50,7 +50,7 @@ class CategoryCell: UICollectionViewCell {
         
         UIView.animate(withDuration: 0.6, delay: 0) {
             self.backgroundColor = self.isSelected ? .orange : .gray
-            self.transform = CGAffineTransformScale(viewsOriginalTransform, 1.3, 1.3)
+            self.transform = CGAffineTransformScale(viewsOriginalTransform, 1.1, 1.1)
         } completion: { _ in
             UIView.animate(withDuration: 0.6, delay: 0) {
                 self.transform = CGAffineTransformScale(viewsOriginalTransform, 1, 1)

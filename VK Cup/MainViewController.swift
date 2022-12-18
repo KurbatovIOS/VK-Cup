@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     private let categoriesCollection: UICollectionView = {
         let layout: UICollectionViewFlowLayout = LeftAlignedCollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         layout.minimumInteritemSpacing = 10
         layout.layoutAttributesForElements(in: CGRect(x: 0, y: 0, width: 100, height: 100))
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -107,7 +108,7 @@ class MainViewController: UIViewController {
         view.addSubview(categoriesCollection)
         
         categoriesCollection.register(CategoryCell.self, forCellWithReuseIdentifier: "categoryCell")
-        
+                
         categoriesCollection.showsVerticalScrollIndicator = false
         
         categoriesCollection.backgroundColor = .systemBackground
@@ -116,10 +117,10 @@ class MainViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            categoriesCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            categoriesCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            categoriesCollection.topAnchor.constraint(equalTo: hintLabel.bottomAnchor, constant: 16),
-            categoriesCollection.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: -16)
+            categoriesCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 6),
+            categoriesCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -6),
+            categoriesCollection.topAnchor.constraint(equalTo: hintLabel.bottomAnchor, constant: 11),
+            categoriesCollection.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: -11)
         ])
     }
 }
