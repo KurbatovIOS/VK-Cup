@@ -35,6 +35,8 @@ class MainViewController: UIViewController {
         categoriesCollection.delegate = self
         categoriesCollection.dataSource = self
         
+        categories.shuffle()
+        
         configureHintLabel()
         configureLaterButton()
         configureContinueButton()
